@@ -1,0 +1,27 @@
+﻿@model List<StudentPracticeApp.Models.Student>
+
+<h2>Student List</h2>
+<a href="@Url.Action("Create", "Student")" class="btn btn-primary">Create New Student</a>
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.Id</td>
+                <td>@student.Name</td>
+                <td>@student.Age</td>
+                <td>
+                    <a href="@Url.Action("Details", new { id = student.Id })">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
